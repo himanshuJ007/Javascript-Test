@@ -36,7 +36,7 @@ axios.get("https://panorbit.in/api/users.json").then((response)=>{
         div.appendChild(username);
         div.appendChild(email);
 
-        div.style.backgroundColor ='Lightblue'
+        div.style.backgroundColor ="Lightgreen"
         div.style.width='250px'
         document.getElementById("parent").appendChild(div);
 
