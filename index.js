@@ -3,6 +3,10 @@ axios.get("https://panorbit.in/api/users.json").then((response)=>{
     users.forEach(element => {
         var div = document.createElement("DIV");
 
+        var id = document.createElement("H1");
+        var idcontent = document.createTextNode("ID: "+element.id);
+        id.appendChild(idcontent);
+
         var name = document.createElement("P");
         var namecontent = document.createTextNode("NAME: "+element.name);
         name.appendChild(namecontent);
@@ -20,11 +24,17 @@ axios.get("https://panorbit.in/api/users.json").then((response)=>{
         img.style.height="80px";
         img.src = element.profilepicture;
 
+        var profile = document.createElement("BUTTON");
+        var profilecontent = document.createTextNode("PROFILE");
+        profile.appendChild(profilecontent)
+        profile.id=element.id;
+
         div.appendChild(img)
+        div.appendChild(profile);
+        div.appendChild(id)
         div.appendChild(name);
         div.appendChild(username);
         div.appendChild(email);
-        
 
         div.style.backgroundColor ='Lightblue'
         div.style.width='250px'
@@ -33,3 +43,10 @@ axios.get("https://panorbit.in/api/users.json").then((response)=>{
     });
 
 })
+
+var button= document.getElementsByTagName('BUTTON');
+
+console.log(button);
+
+
+
